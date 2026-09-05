@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Smart To-Do List</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <main class="app">
+
+        <!-- Header -->
+        <header class="header">
+            <div>
+                <h1>To-Do List App</h1>
+                <p>Organize your tasks and stay productive.</p>
+            </div>
+
+            <button id="themeBtn" class="theme-btn">
+                <i class="fa-solid fa-moon"></i>
+                <span>Dark Mode</span>
+            </button>
+        </header>
+
+
+        <!-- Add Task -->
+        <section class="task-form">
+
+            <div class="form-group">
+                <label for="taskInput">Task</label>
+
+                <input
+                    type="text"
+                    id="taskInput"
+                    placeholder="Enter your task"
+                >
+            </div>
+
+
+            <div class="form-row">
+
+                <div class="form-group">
+                    <label for="category">Category</label>
+
+                    <select id="category">
+                        <option value="Personal">Personal</option>
+                        <option value="Work">Work</option>
+                        <option value="Study">Study</option>
+                    </select>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="priority">Priority</label>
+
+                    <select id="priority">
+                        <option value="Low">Low</option>
+                        <option value="Medium">Medium</option>
+                        <option value="High">High</option>
+                    </select>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="dueDate">Due Date</label>
+
+                    <input type="date" id="dueDate">
+                </div>
+
+            </div>
+
+
+            <button id="addBtn" class="primary-btn">
+                <i class="fa-solid fa-plus"></i>
+                Add Task
+            </button>
+
+        </section>
+
+
+        <!-- Search -->
+        <section class="search-section">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search tasks"
+            >
+
+        </section>
+
+
+        <!-- Filters -->
+        <section class="filters">
+
+            <button class="filter-btn active" data-filter="all">
+                All Tasks
+            </button>
+
+            <button class="filter-btn" data-filter="active">
+                Active
+            </button>
+
+            <button class="filter-btn" data-filter="completed">
+                Completed
+            </button>
+
+        </section>
+
+
+        <!-- Statistics -->
+        <section class="statistics">
+
+            <div class="stat-card">
+                <span>Total Tasks</span>
+                <strong id="totalTasks">0</strong>
+            </div>
+
+            <div class="stat-card">
+                <span>Active Tasks</span>
+                <strong id="activeTasks">0</strong>
+            </div>
+
+            <div class="stat-card">
+                <span>Completed Tasks</span>
+                <strong id="completedTasks">0</strong>
+            </div>
+
+        </section>
+
+
+        <!-- Progress -->
+        <section class="progress-section">
+
+            <div class="progress-header">
+                <span>Overall Progress</span>
+                <span id="progressText">0%</span>
+            </div>
+
+            <div class="progress-bar">
+                <div id="progressFill"></div>
+            </div>
+
+        </section>
+
+
+        <!-- Task List -->
+        <section class="tasks-section">
+
+            <div id="taskList"></div>
+
+            <div id="emptyMessage" class="empty-message">
+                No tasks available. Add a new task to get started.
+            </div>
+
+        </section>
+
+
+        <!-- Clear Completed -->
+        <button id="clearCompletedBtn" class="secondary-btn">
+            <i class="fa-solid fa-trash-can"></i>
+            Clear Completed Tasks
+        </button>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
